@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-input: hsl(214.3 31.8% 91.4%);
+  --color-ring: hsl(222.2 47.4% 11.2%);
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-primary: hsl(222.2 47.4% 11.2%);
+  --color-primary-foreground: hsl(210 40% 98%);
+
+  --color-secondary: hsl(210 40% 96.1%);
+  --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --color-muted: hsl(210 40% 96.1%);
+  --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --color-accent: hsl(210 40% 96.1%);
+  --color-accent-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222.2 47.4% 11.2%);
+
+  --font-sans: Inter, sans-serif;
+}
+
+/* Custom Utilities */
+@utility glass-panel {
+  @apply bg-white/90 backdrop-blur-xl border border-gray-200 shadow-xl;
+}
+
+@utility gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+}
+
+/* Card Styles */
+@utility card {
+  @apply bg-white border border-slate-200 shadow-sm rounded-2xl;
+}
+
+/* Button Styles */
+@utility btn-primary {
+  @apply px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-colors shadow-sm shadow-blue-600/20;
+}
+
+@utility btn-secondary {
+  @apply px-4 py-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium rounded-xl transition-colors;
+}
+
+@utility btn-danger {
+  @apply px-4 py-2 bg-white hover:bg-red-50 border border-red-200 text-red-600 font-medium rounded-xl transition-colors;
+}
+
+/* Input Styles */
+@utility input-field {
+  @apply w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all;
+}
+
+/* Base Styles */
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+* {
+  @apply border-border;
+}
